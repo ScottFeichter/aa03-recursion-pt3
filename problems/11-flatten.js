@@ -12,11 +12,7 @@ flatten([1, 2]); // [1, 2]
 flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
-function flatten(arr) {
-  if (arr.length === 0) return arr;
-  let level = [arr.shift()];
-  return level.concat(flatten(arr));
-}
+
 
 console.log(flatten([])); // []
 console.log(flatten([1, 2])); // [1, 2]

@@ -16,12 +16,20 @@ factorial(3); // 6
 factorial(5); // 120
 ***********************************************************************/
 
-function factorial(num) {
-  if (num === 1) {
-    return 1;
+// function factorial(num) {
+//     if (num === 1) {
+//       return 1;
+//     }
+//     return num * factorial(num - 1);
+//   }
+
+let factorial = (num, total = 1) => {
+  if (num === 0) {
+    return total;
   }
-  return num * factorial(num - 1);
-}
+  total *= num;
+  return factorial(num - 1, total);
+};
 
 console.log(factorial(1)); // 1
 console.log(factorial(3)); // 6
