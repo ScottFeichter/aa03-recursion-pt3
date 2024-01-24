@@ -20,9 +20,21 @@ fibonacci(4); // 3
 fibonacci(10); // 55
 ***********************************************************************/
 
-function fibonacci(n) {
-  if (n === 1 || n === 2) return 1;
-  return fibonacci(n - 1) + fibonacci(n - 2);
+// function fibonacci(n) {
+//   if (n === 1 || n === 2) return 1;
+//   return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+
+const fibonacci = (num, fib = [0,1] ) => {
+    if(num === 0){
+      return fib[fib.length -2]
+    }
+
+    let fibVar = fib[fib.length -1] + fib[fib.length -2]
+    fib.push(fibVar)
+      // console.log(fibVar)
+
+  return fibonacci(num - 1, fib)
 }
 
 console.log(fibonacci(10)); // 55
